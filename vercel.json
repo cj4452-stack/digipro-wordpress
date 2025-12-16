@@ -1,0 +1,30 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "env": {
+    "VITE_GEMINI_API_KEY": "@gemini_api_key",
+    "VITE_WOOCOMMERCE_URL": "@woocommerce_url",
+    "VITE_WOOCOMMERCE_KEY": "@woocommerce_key",
+    "VITE_WOOCOMMERCE_SECRET": "@woocommerce_secret"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOW-FROM *"
+        }
+      ]
+    }
+  ]
+}
